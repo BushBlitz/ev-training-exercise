@@ -5,7 +5,10 @@ const employeeController = require('../controllers/employee.controller')
 
 const ROUTE_PREFIX = "/employee"
 
-//Sample Route
+//GET Employee Route
+router.get(ROUTE_PREFIX+'/:id',employeeController.getEmployee)
+
+//GET Employees Route
 router.get(ROUTE_PREFIX+'/',employeeController.getEmployees)
 
 
