@@ -11,5 +11,8 @@ router.get(ROUTE_PREFIX+'/:id',employeeController.getEmployee)
 //GET Employees Route
 router.get(ROUTE_PREFIX+'/',employeeController.getEmployees)
 
+//POST Employee
+router.post(ROUTE_PREFIX+"/",employeeController.addEmployee)
+
 
 module.exports = router

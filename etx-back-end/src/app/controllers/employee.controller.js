@@ -20,3 +20,11 @@ module.exports.getEmployees = function (req, res) {
     res.status(200)
     res.json(employeeDAO.getEmployees())
 }
+
+const EmployeeRequestModel = require("../model/request/employee.request.model")
+module.exports.addEmployee = function(req, res){
+    this.requestModel = EmployeeRequestModel.addEmployeeRequest(req)
+
+    employeeDAO.addEmployee(this.requestModel.firstName, this.requestModel.lastName)
+    res.send(this.requestModel)
+}
