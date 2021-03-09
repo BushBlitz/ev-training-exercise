@@ -5,7 +5,9 @@ const path = require("path");
 const employeesData = "../data/employees.json"
 const Employee = require('../model/employee.model')
 
-module.exports.getEmployees = function(){
+module.exports.getEmployees = getEmployees
+
+function getEmployees(){
     
     let employees = []
     let rawdata = fs.readFileSync(path.resolve(__dirname,employeesData));
@@ -23,6 +25,6 @@ module.exports.getEmployees = function(){
 
 module.exports.getEmployee = function(id){
 
-    this.employees =this.getEmployees()
-    return this.employees.find(emp => emp.id == id)
+    var employees = getEmployees()
+    return employees.find(emp => emp.id == id)
 }
