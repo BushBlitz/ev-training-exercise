@@ -9,9 +9,9 @@ const Employee = require('../model/employee.model')
 module.exports.getEmployees = getEmployees
 
 module.exports.getEmployee = function (id) {
-
-    this.employees = getEmployees()
-    return this.employees.find(emp => emp.id == id)
+    
+    employees = getEmployees()
+    return employees.find(emp => emp.id == id)
 }
 
 
@@ -22,8 +22,8 @@ function getEmployees() {
     let rawEmployees = JSON.parse(rawdata);
     rawEmployees.forEach(rawEmployee => {
         employees.push(new Employee(rawEmployee.id,
-                                    rawEmployee.firstName,
-                                    rawEmployee.lastName))
+            rawEmployee.firstName,
+            rawEmployee.lastName))
     });
 
 
@@ -32,32 +32,36 @@ function getEmployees() {
 }
 
 module.exports.addEmployee = function (firstName, lastName) {
-    this.employees = getEmployees()
-    this.id = generateEmployeeID()
-    this.firstName = firstName
-    this.lastName = lastName
+    var employees = getEmployees()
+    var id = generateEmployeeID()
+    var firstName = firstName
+    var lastName = lastName
 
-    this.employee = new Employee(this.id,
-                                 this.firstName,
-                                 this.lastName)
+    employee = new Employee(id,
+        firstName,
+        lastName)
 
-    this.employees.push(this.employee)
-    overwriteEmployees(this.employees)
+    employees.push(employee)
+    overwriteEmployees(employees)
+
+    return employee
 }
 
-function getMaxEmployeeID() {
-    this.employees = getEmployees()
+function getMaxEmployeeID(employees) {
+    if (employees == undefined) {
+        employees = getEmployees()
+    }
 
-    return Math.max.apply(Math, this.employees.map(function (emp) {
+    return Math.max.apply(Math, employees.map(function (emp) {
         return emp.id;
     }))
 }
 
-function generateEmployeeID() {
-    return getMaxEmployeeID() + 1;
+function generateEmployeeID(employees) {
+    return getMaxEmployeeID(employees) + 1;
 }
 
-function overwriteEmployees(employees){
-    let data = JSON.stringify(employees,null, 2);
+function overwriteEmployees(employees) {
+    let data = JSON.stringify(employees, null, 2);
     fs.writeFileSync(path.resolve(__dirname, employeesData), data);
 }
