@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "firstName": "Jim",
     "lastName": "Halpert"
   },
@@ -61,8 +61,8 @@
   },
   {
     "id": 13,
-    "firstName": "Reggis",
-    "lastName": "Philbin"
+    "firstName": "Miles",
+    "lastName": "Morales"
   },
   {
     "id": 14,

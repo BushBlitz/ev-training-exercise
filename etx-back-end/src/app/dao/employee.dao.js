@@ -9,9 +9,42 @@ const Employee = require('../model/employee.model')
 module.exports.getEmployees = getEmployees
 
 module.exports.getEmployee = function (id) {
-    
+
     employees = getEmployees()
     return employees.find(emp => emp.id == id)
+}
+
+module.exports.addEmployee = function (firstName, lastName) {
+    var employees = getEmployees()
+    var id = generateEmployeeID()
+    var firstName = firstName
+    var lastName = lastName
+
+    employee = new Employee(id,
+        firstName,
+        lastName)
+
+    employees.push(employee)
+    overwriteEmployees(employees)
+
+    return employee
+}
+
+module.exports.updateEmployee = function (id, firstName, lastName) {
+    var employees = getEmployees()
+    var employeeIdx = employees.findIndex((emp => emp.id == id))
+
+    var employee = new Employee(id, firstName, lastName)
+    if (employees[employeeIdx] != undefined) {
+
+        employees[employeeIdx].firstName = employee.firstName
+        employees[employeeIdx].lastName = employee.lastName
+
+        overwriteEmployees(employees)
+    }
+    employee = employees[employeeIdx]
+
+    return employee
 }
 
 
@@ -29,22 +62,6 @@ function getEmployees() {
 
     return employees
 
-}
-
-module.exports.addEmployee = function (firstName, lastName) {
-    var employees = getEmployees()
-    var id = generateEmployeeID()
-    var firstName = firstName
-    var lastName = lastName
-
-    employee = new Employee(id,
-        firstName,
-        lastName)
-
-    employees.push(employee)
-    overwriteEmployees(employees)
-
-    return employee
 }
 
 function getMaxEmployeeID(employees) {
