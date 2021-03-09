@@ -27,3 +27,18 @@ module.exports.addEmployee = function(req, res){
     var employee = employeeDAO.addEmployee(requestModel.firstName, requestModel.lastName)
     res.send(employee)
 }
+
+module.exports.deleteEmployee = function(req, res){
+    var id = req.params.id
+
+    var employee = employeeDAO.deleteEmployee(id)
+
+    if(employee != undefined){
+        res.status(200)
+        res.send(employee)
+    }
+    else{
+        res.status(406)
+        res.json({"message":"ID not existing!"})
+    }
+}

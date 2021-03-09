@@ -9,7 +9,7 @@ const Employee = require('../model/employee.model')
 module.exports.getEmployees = getEmployees
 
 module.exports.getEmployee = function (id) {
-    
+
     employees = getEmployees()
     return employees.find(emp => emp.id == id)
 }
@@ -45,6 +45,19 @@ module.exports.addEmployee = function (firstName, lastName) {
     overwriteEmployees(employees)
 
     return employee
+}
+
+module.exports.deleteEmployee = function (id) {
+    var employees = getEmployees()
+    var employeeIdx = employees.findIndex((emp => emp.id == id))
+    var employee = employees[employeeIdx]
+    if (employees[employeeIdx] != undefined) {
+        employees.splice(employeeIdx, 1)
+        overwriteEmployees(employees)
+    }
+
+    return employee
+
 }
 
 function getMaxEmployeeID(employees) {
