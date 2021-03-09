@@ -1,52 +1,52 @@
 [
     {
         "id":1,
-        "first_name":"Jim",
-        "last_name":"Halpert"
+        "firstName":"Jim",
+        "lastName":"Halpert"
     },
     {
         "id":2,
-        "first_name":"Pam",
-        "last_name":"Beesley"
+        "firstName":"Pam",
+        "lastName":"Beesley"
     },
     {
         "id":3,
-        "first_name":"Dwight",
-        "last_name":"Schrute"       
+        "firstName":"Dwight",
+        "lastName":"Schrute"       
     },
     {
         "id":4,
-        "first_name":"Andy",
-        "last_name":"Bernard"       
+        "firstName":"Andy",
+        "lastName":"Bernard"       
     },
     {
         "id":5,
-        "first_name":"Angela",
-        "last_name":"Martin"       
+        "firstName":"Angela",
+        "lastName":"Martin"       
     },
     {
         "id":6,
-        "first_name":"Erin",
-        "last_name":"Hannon"       
+        "firstName":"Erin",
+        "lastName":"Hannon"       
     },
     {
         "id":7,
-        "first_name":"Ryan",
-        "last_name":"Howard"       
+        "firstName":"Ryan",
+        "lastName":"Howard"       
     },
     {
         "id":8,
-        "first_name":"Stanley",
-        "last_name":"Hudson"       
+        "firstName":"Stanley",
+        "lastName":"Hudson"       
     },
     {
         "id":9,
-        "first_name":"Darryl",
-        "last_name":"Philbin"       
+        "firstName":"Darryl",
+        "lastName":"Philbin"       
     },
     {
         "id":10,
-        "first_name":"Toby",
-        "last_name":"Flenderson"       
+        "firstName":"Toby",
+        "lastName":"Flenderson"       
     }
 ]
