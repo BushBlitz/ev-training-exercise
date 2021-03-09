@@ -3,10 +3,10 @@ const url = require('url')
 const employeeDAO = require('../dao/employee.dao')
 
 module.exports.getEmployee = function (req, res) {
-    this.id = req.params.id
-    this.employee = employeeDAO.getEmployee(this.id)
+    var id = req.params.id
+    var employee = employeeDAO.getEmployee(id)
 
-    if (this.employee == undefined) {
+    if (employee == undefined) {
         res.status(404)
         res.json({"message":'Employee not found!'})
     } else {
