@@ -1,6 +1,5 @@
-const url = require('url')
-
 const employeeDAO = require('../dao/employee.dao')
+const EmployeeRequestModel = require("../model/request/employee.request.model")
 
 module.exports.getEmployee = function (req, res) {
     var id = req.params.id
@@ -19,4 +18,12 @@ module.exports.getEmployee = function (req, res) {
 module.exports.getEmployees = function (req, res) {
     res.status(200)
     res.json(employeeDAO.getEmployees())
+}
+
+
+module.exports.addEmployee = function(req, res){
+    var requestModel = EmployeeRequestModel.addEmployeeRequest(req)
+
+    var employee = employeeDAO.addEmployee(requestModel.firstName, requestModel.lastName)
+    res.send(employee)
 }
