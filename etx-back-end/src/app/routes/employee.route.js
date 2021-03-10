@@ -17,5 +17,8 @@ router.post(ROUTE_PREFIX + "/", employeeController.addEmployee)
 //DELETE Employee
 router.delete(ROUTE_PREFIX + "/:id", employeeController.deleteEmployee)
 
+//PUT Employee
+router.put(ROUTE_PREFIX+"/",employeeController.updateEmployee)
+
 
 module.exports = router

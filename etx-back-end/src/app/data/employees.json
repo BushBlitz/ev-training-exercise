@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "firstName": "Jim",
     "lastName": "Halpert"
   },
@@ -48,5 +48,30 @@
     "id": 11,
     "firstName": "Alonzo",
     "lastName": "Manaloto"
+  },
+  {
+    "id": 12,
+    "firstName": "Darrianne",
+    "lastName": "Reyes"
+  },
+  {
+    "id": 13,
+    "firstName": "Miles",
+    "lastName": "Morales"
+  },
+  {
+    "id": 14,
+    "firstName": "Reggis",
+    "lastName": "Philbin"
+  },
+  {
+    "id": 15,
+    "firstName": "Reggis",
+    "lastName": "Philbin"
+  },
+  {
+    "id": 16,
+    "firstName": "Reggis",
+    "lastName": "Philbin"
   }
 ]

@@ -42,3 +42,22 @@ module.exports.deleteEmployee = function(req, res){
         res.json({"message":"ID not existing!"})
     }
 }
+
+module.exports.updateEmployee = function(req, res){
+    var requestModel = EmployeeRequestModel.updateEmployeeRequest(req)
+
+    if(requestModel.id == undefined){
+        res.status(403)
+        res.json({"message":"id is required!"})
+    }
+    
+    var employee = employeeDAO.updateEmployee(requestModel.id, requestModel.firstName, requestModel.lastName)
+    if(employee != undefined){
+        res.status(200)
+        res.json(employee)
+    }
+    else{
+        res.status(406)
+        res.json({"message":"ID not existing"})
+    }
+}
