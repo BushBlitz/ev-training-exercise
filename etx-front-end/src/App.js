@@ -1,24 +1,21 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import Greet from "./components/Greet";
-import Welcome from "./components/Welcome";
-import Hello from "./components/Hello";
-import Message from "./components/Message";
-import Counter from "./components/Counter"
-import FunctionClick from "./components/FunctionClick";
-import ClassClick from "./components/ClassClick";
-import EventBind from "./components/EventBind";
-import ParentComponent from "./components/ParentComponent";
-import ListEmployee from "./components/employee/ListEmployee";
 import EmployeeViewer from "./components/employee/EmployeeViewer";
 import Form from "./components/Form";
+import Nav from "./components/nav/Nav";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Form></Form>
-      
-      <EmployeeViewer></EmployeeViewer>
+      {/* <Form></Form> */}
+      <Router>
+        <Nav />
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/view" component={EmployeeViewer} />
+      </Router>
+
+      {/* <EmployeeViewer></EmployeeViewer> */}
       {/* <ListEmployee></ListEmployee>
       <ParentComponent></ParentComponent> */}
       {/* <EventBind></EventBind> */}
@@ -34,5 +31,11 @@ function App() {
     </div>
   );
 }
+
+const Home = () => (
+  <div>
+    <h1>Home Page</h1>
+  </div>
+);
 
 export default App;
