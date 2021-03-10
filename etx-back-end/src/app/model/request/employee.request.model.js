@@ -7,3 +7,13 @@ module.exports.addEmployeeRequest = function (req) {
         "lastName": body.lastName
     }
 }
+
+module.exports.updateEmployeeRequest = function (req) {
+
+    const body = req.body
+    return {
+        "id": body.id,
+        "firstName": body.firstName,
+        "lastName": body.lastName
+    }
+}

@@ -14,5 +14,8 @@ router.get(ROUTE_PREFIX+'/',employeeController.getEmployees)
 //POST Employee
 router.post(ROUTE_PREFIX+"/",employeeController.addEmployee)
 
+//PUT Employee
+router.put(ROUTE_PREFIX+"/",employeeController.updateEmployee)
+
 
 module.exports = router
