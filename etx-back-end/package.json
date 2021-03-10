@@ -1,0 +1,16 @@
+{
+  "name": "etx-back-end",
+  "version": "1.0.0",
+  "description": "back-end service for ev onboarding training",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alonzo Manaloto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "glob": "^7.1.6"
+  }
+}
