@@ -3,7 +3,6 @@ const e = require('express');
 const fs = require('fs')
 const path = require("path");
 
-const employeesData = "../data/employees.json"
 const Employee = require('../model/employee.model')
 
 module.exports.getEmployees = getEmployees
@@ -11,7 +10,8 @@ module.exports.getEmployees = getEmployees
 module.exports.getEmployee = function (id) {
 
     employees = getEmployees()
-    return employees.find(emp => emp.id == id)
+    let employee =  employees.find(emp => emp.id == id)
+    return employee
 }
 
 module.exports.addEmployee = function (firstName, lastName) {
@@ -49,7 +49,7 @@ module.exports.updateEmployee = function (id, firstName, lastName) {
 
 
 function getEmployees() {
-
+    let employeesData = getEmployeesData()
     let employees = []
     let rawdata = fs.readFileSync(path.resolve(__dirname, employeesData));
     let rawEmployees = JSON.parse(rawdata);
@@ -79,6 +79,13 @@ function generateEmployeeID(employees) {
 }
 
 function overwriteEmployees(employees) {
+    employeesData = getEmployeesData()
     let data = JSON.stringify(employees, null, 2);
     fs.writeFileSync(path.resolve(__dirname, employeesData), data);
+}
+
+function getEmployeesData(){
+    employeesData = process.env.NODE_EMPLOYEE_JSON_PATH || "../data/employees.json"
+
+    return employeesData
 }
