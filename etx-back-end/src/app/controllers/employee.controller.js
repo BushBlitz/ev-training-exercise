@@ -10,7 +10,7 @@ module.exports.getEmployee = function (req, res) {
         res.json({"message":'Employee not found!'})
     } else {
         res.status(200)
-        res.json(this.employee)
+        res.json(employee)
     }
 
 }
