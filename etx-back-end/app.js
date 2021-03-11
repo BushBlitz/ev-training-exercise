@@ -20,3 +20,5 @@ var server = http.createServer(app)
 server.listen(port, () => {
     console.log(`EV Onboarding App listening at http://localhost:${port}`)
 })
+
+module.exports = server
