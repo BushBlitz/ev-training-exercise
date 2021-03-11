@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import EmployeeViewer from "./components/employee/EmployeeViewer";
+import { ViewEmployee } from "./components/employee/ViewEmployee";
 import Form from "./components/Form";
 import Nav from "./components/nav/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Nav />
           <Route path="/" exact component={Home}></Route>
-          <Route path="/view" component={EmployeeViewer} />
+          <Route path="/view" component={ViewEmployee} />
       </Router>
 
       {/* <EmployeeViewer></EmployeeViewer> */}

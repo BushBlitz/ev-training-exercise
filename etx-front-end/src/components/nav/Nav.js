@@ -12,17 +12,18 @@ export default function Nav() {
           </li>
         </Link>
 
+        <Link to="/add">
+          <li>
+            <NavLink name="Add"></NavLink>
+          </li>
+        </Link>
+        
         <Link to="/edit">
           <li>
             <NavLink name="Edit"></NavLink>
           </li>
         </Link>
 
-        <Link to="/add">
-          <li>
-            <NavLink name="Add"></NavLink>
-          </li>
-        </Link>
 
         <Link to="/delete">
           <li>

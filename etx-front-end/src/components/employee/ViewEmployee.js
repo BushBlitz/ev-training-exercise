@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ListEmployee from "./ListEmployee";
 
-export class EmployeeViewer extends Component {
+export class ViewEmployee extends Component {
   constructor(props) {
     super(props);
 
@@ -49,4 +49,4 @@ export class EmployeeViewer extends Component {
   }
 }
 
-export default EmployeeViewer;
+export default ViewEmployee;
