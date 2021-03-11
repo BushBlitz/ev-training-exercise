@@ -4,6 +4,7 @@ import { ViewEmployee } from "./components/employee/ViewEmployee";
 import Nav from "./components/nav/Nav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AddEmployee from "./components/employee/AddEmployee";
+import DeleteEmployee from "./components/employee/DeleteEmployee";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact component={Home}></Route>
           <Route path="/view" component={ViewEmployee} />
           <Route path="/add" component={AddEmployee} />
+          <Route path="/delete" component={DeleteEmployee} />
       </Router>
 
       {/* <EmployeeViewer></EmployeeViewer> */}

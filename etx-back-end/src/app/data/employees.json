@@ -20,34 +20,9 @@
     "lastName": "Bernard"
   },
   {
-    "id": 5,
-    "firstName": "Angela",
-    "lastName": "Martin"
-  },
-  {
-    "id": 6,
-    "firstName": "Erin",
-    "lastName": "Hannon"
-  },
-  {
-    "id": 7,
-    "firstName": "Ryan",
-    "lastName": "Howard"
-  },
-  {
-    "id": 8,
-    "firstName": "Stanley",
-    "lastName": "Hudson"
-  },
-  {
     "id": 9,
     "firstName": "Darryl",
     "lastName": "Philbin"
-  },
-  {
-    "id": 11,
-    "firstName": "Alonzo",
-    "lastName": "Manaloto"
   },
   {
     "id": 12,
@@ -68,25 +43,5 @@
     "id": 15,
     "firstName": "Reggis",
     "lastName": "Philbin"
-  },
-  {
-    "id": 16,
-    "firstName": "Reggis",
-    "lastName": "Philbin"
-  },
-  {
-    "id": 17,
-    "firstName": "ALONZO",
-    "lastName": "MANALOTO"
-  },
-  {
-    "id": 18,
-    "firstName": "Darrianne",
-    "lastName": "Reyes"
-  },
-  {
-    "id": 19,
-    "firstName": "Wowoweewow",
-    "lastName": "Yes"
   }
 ]
