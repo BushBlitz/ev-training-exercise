@@ -146,7 +146,7 @@ describe("/DELETE Employee", () => {
     let request = postRequest
     chai
       .request(server)
-      .post("/employee/"+postRequest.id)
+      .delete("/employee/"+postRequest.id)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.an("object");
@@ -158,6 +158,8 @@ describe("/DELETE Employee", () => {
         expect(res.body.firstName).to.eql(request.firstName)
         expect(res.body.lastName).to.eql(request.lastName)
         expect(res.body.id).to.eql(request.id)
+
+        console.log("Employee Deleted", request)
 
         done();
       });
