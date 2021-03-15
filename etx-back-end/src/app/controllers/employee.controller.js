@@ -10,7 +10,7 @@ module.exports.getEmployee = function (req, res) {
         res.json({"message":'Employee not found!'})
     } else {
         res.status(200)
-        res.json(this.employee)
+        res.json(employee)
     }
 
 }
@@ -28,6 +28,20 @@ module.exports.addEmployee = function(req, res){
     res.send(employee)
 }
 
+module.exports.deleteEmployee = function(req, res){
+    var id = req.params.id
+
+    var employee = employeeDAO.deleteEmployee(id)
+
+    if(employee != undefined){
+        res.status(200)
+        res.send(employee)
+    }
+    else{
+        res.status(406)
+        res.json({"message":"ID not existing!"})
+    }
+}
 
 module.exports.updateEmployee = function(req, res){
     var requestModel = EmployeeRequestModel.updateEmployeeRequest(req)
