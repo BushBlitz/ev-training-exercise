@@ -1,9 +1,11 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import { ViewEmployee } from "./components/employee/ViewEmployee";
-import Form from "./components/Form";
 import Nav from "./components/nav/Nav";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import AddEmployee from "./components/employee/AddEmployee";
+import DeleteEmployee from "./components/employee/DeleteEmployee";
+import EditEmployee from "./components/employee/EditEmployee";
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
         <Nav />
           <Route path="/" exact component={Home}></Route>
           <Route path="/view" component={ViewEmployee} />
+          <Route path="/add" component={AddEmployee} />
+          <Route path="/delete" component={DeleteEmployee} />
+          <Route path="/edit" component={EditEmployee} />
       </Router>
 
       {/* <EmployeeViewer></EmployeeViewer> */}
