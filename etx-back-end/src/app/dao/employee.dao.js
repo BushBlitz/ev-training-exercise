@@ -64,6 +64,35 @@ function getEmployees() {
 
 }
 
+module.exports.addEmployee = function (firstName, lastName) {
+    var employees = getEmployees()
+    var id = generateEmployeeID()
+    var firstName = firstName
+    var lastName = lastName
+
+    employee = new Employee(id,
+        firstName,
+        lastName)
+
+    employees.push(employee)
+    overwriteEmployees(employees)
+
+    return employee
+}
+
+module.exports.deleteEmployee = function (id) {
+    var employees = getEmployees()
+    var employeeIdx = employees.findIndex((emp => emp.id == id))
+    var employee = employees[employeeIdx]
+    if (employees[employeeIdx] != undefined) {
+        employees.splice(employeeIdx, 1)
+        overwriteEmployees(employees)
+    }
+
+    return employee
+
+}
+
 function getMaxEmployeeID(employees) {
     if (employees == undefined) {
         employees = getEmployees()
