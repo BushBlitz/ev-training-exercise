@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: ./etx-front-end
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./etx-front-end:/usr/src/app
+    environment: 
+      REACT_APP_SERVER_URL: http://localhost:80
+
+  host:
+    build: ./etx-back-end
+    ports:
+      - "80:80"
+    volumes:
+      - ./etx-back-end:/usr/src/app
+
+    
+
