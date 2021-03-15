@@ -17,3 +17,14 @@
   align-items: center;
   list-style: none;
 }
+
+.dataGridDarkMode{
+  background-color:#585858;
+}
+.dataGridHeaderClassDarkMode{
+  color:white;
+  font-weight: bold;
+}
+.dataGridCellClassDarkMode{
+  color:white;
+}

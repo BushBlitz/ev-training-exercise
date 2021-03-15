@@ -1,9 +1,9 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import { ViewEmployee } from "./components/employee/ViewEmployee";
-import Form from "./components/Form";
 import Nav from "./components/nav/Nav";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import AddEmployee from "./components/employee/AddEmployee";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Nav />
           <Route path="/" exact component={Home}></Route>
           <Route path="/view" component={ViewEmployee} />
+          <Route path="/add" component={AddEmployee} />
       </Router>
 
       {/* <EmployeeViewer></EmployeeViewer> */}

@@ -4,9 +4,27 @@ import axios from "axios";
 
 export class ListEmployee extends Component {
   columns = [
-    { field: "id", headerName: "ID", width: 100 },
-    { field: "firstName", headerName: "First name", width: 170 },
-    { field: "lastName", headerName: "Last name", width: 170 },
+    {
+      field: "id",
+      headerName: "ID",
+      width: 100,
+      cellClassName: "dataGridCellClassDarkMode",
+      headerClassName: "dataGridHeaderClassDarkMode",
+    },
+    {
+      field: "firstName",
+      headerName: "First name",
+      width: 270,
+      cellClassName: "dataGridCellClassDarkMode",
+      headerClassName: "dataGridHeaderClassDarkMode",
+    },
+    {
+      field: "lastName",
+      headerName: "Last name",
+      width: 270,
+      cellClassName: "dataGridCellClassDarkMode",
+      headerClassName: "dataGridHeaderClassDarkMode",
+    },
   ];
 
   constructor(props) {
@@ -22,14 +40,10 @@ export class ListEmployee extends Component {
     this.getEmployees();
   }
 
-
-
   getEmployees() {
-    console.log(process.env.REACT_APP_SERVER_URL);
     axios
       .get(process.env.REACT_APP_SERVER_URL + "/employee")
       .then((response) => {
-        console.log(response);
         this.setState({
           employees: response.data,
         });
@@ -39,11 +53,13 @@ export class ListEmployee extends Component {
       });
   }
   setSelectedRow(row) {
-    this.props.rowClickHandler(row);
+    if (this.props.rowClickHandler != undefined) {
+      this.props.rowClickHandler(row);
+    }
   }
   render() {
     var { employees } = this.state;
-    
+
     // if(this.props.refresh)
     // {
     //   this.getEmployees()
@@ -53,11 +69,9 @@ export class ListEmployee extends Component {
       <div
         style={{
           height: 400,
-          width: "50%",
-          margin: "auto",
-          backgroundColor: "#ADD4D9",
-          marginTop:50
+          width: "100%",
         }}
+        className="dataGridDarkMode"
       >
         <DataGrid
           rows={employees}
@@ -67,6 +81,7 @@ export class ListEmployee extends Component {
           onRowClick={(rows) => {
             this.setSelectedRow(rows.row);
           }}
+          color="primary"
         ></DataGrid>
       </div>
     );

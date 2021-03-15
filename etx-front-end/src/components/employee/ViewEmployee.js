@@ -31,10 +31,13 @@ export class ViewEmployee extends Component {
     return (
       <div>
         <h1>View Employee</h1>
+        <div style={{width:"50%",margin:"auto"}}>
+          
         <ListEmployee
           rowClickHandler={this.setEmployee}
           ref={this.listEmployeeRef}
         ></ListEmployee>
+        </div>
 
         <div style={{ marginTop: "25px" }}>
           Selected Employee is{" "}
